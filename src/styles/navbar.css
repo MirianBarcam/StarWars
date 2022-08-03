@@ -1,7 +1,15 @@
 .icon_starWars{
-    width: 10rem;
+    width: 15rem;
     margin-left: 5rem;
 }
 .navbar{
     background-color: black;
+}
+.container_btn_favourite{
+    margin-right: 5rem;
+}
+.btn_favourite{
+    color: rgb(64, 181, 203);
+    background-color: black;
+    border: none;
 }
