@@ -17,6 +17,10 @@ import "../../styles/cardsContainer.css";
      <Card/>
      <Card/>
      <Card/>
+     <Card/>
+     <Card/>
+     <Card/>
+     <Card/>
     </div>
   </div>
 );
