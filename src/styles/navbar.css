@@ -1,15 +1,36 @@
-.icon_starWars{
+.icon-starWars{
     width: 15rem;
     margin-left: 5rem;
 }
 .navbar{
     background-color: black;
+    margin-bottom: 0px;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
-.container_btn_favourite{
+.container-btn-favourite{
     margin-right: 5rem;
 }
-.btn_favourite{
-    color: rgb(64, 181, 203);
-    background-color: black;
-    border: none;
+
+.container-btn-favourite-mobile{
+    margin-top: 3rem;
+    margin-left: 5rem;;
+}
+
+.btn-favourite{
+    color: black;
+    background-color:rgb(64, 181, 203) ;
+    border-radius: 10px;
+    border:none;
+    padding: 8px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: larger;
+    box-shadow: 3px 1px 10px rgb(192, 223, 64);
+    transform: rotate(-3deg);
+}
+
+.badge{
+    background-color:rgb(192, 223, 64);
+    color: black;
+    margin-left: 10px;
 }

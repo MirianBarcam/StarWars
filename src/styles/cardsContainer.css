@@ -1,10 +1,28 @@
-*{
+/* *{
     border: 1px solid red;
+} */
+
+.container-general{
+    padding-top: 3rem;
+    background-color: black;
+    padding-bottom: 3rem;
 }
+
+.cardsContainer-title{
+    color: rgb(192, 223, 64);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 3rem;
+    font-size: xx-large;
+    padding: 5px;
+    text-shadow:  3px 1px 20px rgb(192, 223, 64);;
+}
+
 
 .container-card{
     display: flex; 
     overflow-x: auto;
-    margin-right: 5rem;
-    margin-left: 5rem;
+    margin-right: 3rem;
+    margin-left: 3rem;
+    background-color: black;
+    padding-top:2rem;
 }
