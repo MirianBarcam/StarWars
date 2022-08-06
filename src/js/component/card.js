@@ -4,7 +4,6 @@ import { FaHeart} from "react-icons/fa";
 
 const Card = (props) => {
 
-
   return (
     <div className="card">
       <img src={props.setImage} className="card-img-top" alt="..." />

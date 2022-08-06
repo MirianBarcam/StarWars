@@ -1,24 +1,23 @@
-import React, { useState } from "react";
+import React, { useState,useEffect,useContext } from "react";
 import  CardsContainer  from "../../js/component/cardsContainer.js";
 import "../../styles/home.css";
-import Characters from "../store/characters.js";
-import Locations from "../store/characters.js";
-import Episodies from "../store/characters.js";
+import { Context } from "../store/appContext";
 
 const Home = () => {
-	const [allCharacters,setAllCharacters]=useState();
-	const [allLocations,setAllLocations] =useState ();
-	const [allEpisodies,setAllEpisodies] = useState();
-
+	const {store,actions}=useContext(Context);
+	//llamamos a la función para que traiga los datos y los guarde en charactersList
+	useEffect(()=>{
+		actions.fetchCharactersList();
+		actions.fetchLocationList();
+		actions.fetchEpisodesList()
+	},[]);
 
 	return(
 	<>
-		<Characters getAllCharacters={setAllCharacters}/>
-		<Locations getAllLocations={setAllLocations}/>
-		<Episodies getAllEpisodies={setAllEpisodies}/>
-		<CardsContainer setInfoCards={allCharacters} setTitleContainerCards='Characters'/>
-		<CardsContainer setInfoCards={allCharacters} setTitleContainerCards='Location'/>
-		<CardsContainer setInfoCards={allCharacters} setTitleContainerCards='Episodies'/>
+		<CardsContainer setInfoCards={store.charactersList} setTitleContainerCards='Characters'/>
+		<CardsContainer setInfoCards={store.locationList} setTitleContainerCards='Locations'/>
+		<CardsContainer setInfoCards={store.episodesList} setTitleContainerCards='Episodes'/>
+
 	</>
 );
 };

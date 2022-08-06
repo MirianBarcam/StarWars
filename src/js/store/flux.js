@@ -12,7 +12,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			],
+			charactersList: [],
+			locationList:[],
+			episodesList:[]
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
@@ -37,9 +40,45 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 				//reset the global store
 				setStore({ demo: demo });
-			}
+			},
+			fetchCharactersList: () => {
+				fetch("https://rickandmortyapi.com/api/character", {
+					method: "GET",
+				})
+					.then((resp) => {
+						console.log(resp.ok);
+						console.log(resp.status);
+						return resp.json();
+					})
+					.then(data => setStore({ charactersList: data.results }));
+
+			},
+			fetchLocationList: () => {
+				fetch("https://rickandmortyapi.com/api/location", {
+					method: "GET",
+				})
+					.then((resp) => {
+						console.log(resp.ok);
+						console.log(resp.status);
+						return resp.json();
+					})
+					.then(data => setStore({ locationList: data.results }));
+
+			},
+			fetchEpisodesList: () => {
+				fetch("https://rickandmortyapi.com/api/episode", {
+					method: "GET",
+				})
+					.then((resp) => {
+						console.log(resp.ok);
+						console.log(resp.status);
+						return resp.json();
+					})
+					.then(data => setStore({ episodesList: data.results }));
+
+			},
 		}
-	};
+	}
 };
 
 export default getState;
