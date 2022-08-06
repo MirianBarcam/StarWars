@@ -5,7 +5,6 @@ import { Context } from "../store/appContext";
 
 const Home = () => {
 	const {store,actions}=useContext(Context);
-	//llamamos a la función para que traiga los datos y los guarde en charactersList
 	useEffect(()=>{
 		actions.fetchCharactersList();
 		actions.fetchLocationList();
