@@ -16,7 +16,6 @@ const Home = () => {
 		<CardsContainer setInfoCards={store.charactersList} setTitleContainerCards='Characters'/>
 		<CardsContainer setInfoCards={store.locationList} setTitleContainerCards='Locations'/>
 		<CardsContainer setInfoCards={store.episodesList} setTitleContainerCards='Episodes'/>
-
 	</>
 );
 };

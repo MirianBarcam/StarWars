@@ -1,0 +1,19 @@
+.container-cardSelected{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 5rem;
+    height: 35rem;
+}
+.container-image{
+    padding-left: 20px;
+    height: 100%;
+}
+
+.container-description{
+    color: rgb(64, 181, 203);
+    width: 100%;
+    height: 100%;
+    margin-left: 20px;
+}

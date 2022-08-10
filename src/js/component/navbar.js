@@ -27,7 +27,7 @@ const Navbar = () => {
 				<img className="navbar-brand mb-0 h1 icon-starWars" src={IconoRickAndMorty}></img>
 			</Link>
 			<div className={windowWidth<550 ? 'container-btn-favourite-mobile':'container-btn-favourite'}>
-				<Link to="/demo">
+				<Link to="/cardSelected">
 					<button type="button" className="btn-favourite" >Favourites
 						<span className="badge text-bg-secondary">4</span>
 					</button>

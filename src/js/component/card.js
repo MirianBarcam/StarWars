@@ -1,9 +1,11 @@
-import React from "react";
+import React, {useContext} from "react";
 import "../../styles/card.css";
 import { FaHeart} from "react-icons/fa";
+import { Context } from "../store/appContext";
+import { Link } from "react-router-dom";
 
 const Card = (props) => {
-
+   const {store,actions} = useContext(Context);
 
 
   return (
@@ -16,9 +18,11 @@ const Card = (props) => {
         <h6 >{props.statementData3}{props.setData3}</h6>
         <h6 >{props.statementData4}{props.setData4}</h6>
         <div className="container-btn-card">
-          <button href="#" className="btn-learn-more-card">
+        <Link to="/cardSelected">
+          <button href="#" className="btn-learn-more-card" onClick={()=>actions.setValueAndTypeElementClicked(props.cardInfo,props.cardType)}>
             Learn more
           </button>
+          </Link>
           <button href="#" className="btn-favourite-card">
            <FaHeart/>
           </button>
