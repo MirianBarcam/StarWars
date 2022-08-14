@@ -23,7 +23,7 @@ const Card = (props) => {
             Learn more
           </button>
           </Link>
-          <button href="#" className="btn-favourite-card">
+          <button href="#" className="btn-favourite-card" onClick={()=>actions.addElementFavourite(store.favouriteElements,props.cardInfo)}>
            <FaHeart/>
           </button>
         </div>

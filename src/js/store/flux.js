@@ -5,6 +5,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			locationList:[],
 			episodesList:[],
 			elementClicked:{},
+			favouriteElements:[]
 		},
 		actions: {
 
@@ -18,6 +19,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ charactersList: data.results }));
 
 			},
+
 			fetchLocationList: () => {
 				fetch("https://rickandmortyapi.com/api/location", {
 					method: "GET",
@@ -28,6 +30,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ locationList: data.results }));
 
 			},
+
 			fetchEpisodesList: () => {
 				fetch("https://rickandmortyapi.com/api/episode", {
 					method: "GET",
@@ -38,11 +41,19 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.then(data => setStore({ episodesList: data.results }));
 
 			},
+
 			setValueAndTypeElementClicked: (cardInfo,cardType) => {
+			
 				const element = cardInfo;
 				element.cardtype = cardType;
 				setStore({elementClicked:element});
 			},
+			
+			addElementFavourite: (favouriteList,cardInfo)=>{
+				setStore({
+					favouriteElements:[...favouriteList,cardInfo]
+				})
+			}
 
 		}
 	}
