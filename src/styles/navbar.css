@@ -34,3 +34,11 @@
     color: black;
     margin-left: 10px;
 }
+
+.dropdown-menu{
+    background-color: rgb(64, 181, 203);
+}
+
+.dropdown-menu.show{
+    margin-top: 10px;
+}

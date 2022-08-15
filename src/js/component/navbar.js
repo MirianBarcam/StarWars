@@ -22,22 +22,20 @@ const Navbar = () => {
 		
 	}
 	const generateFavouriteList = store.favouriteElements.map((favouriteElement)=>{
-		return <li><a class="dropdown-item" href="#">{favouriteElement.name}</a></li>
+		return <li key={favouriteElement.key}><a className="dropdown-item" href="#">{favouriteElement.name}</a></li>
 	})
 			
-	
-
 	return (
 		<nav className="navbar">
 			<Link to="/">
 				<img className="navbar-brand mb-0 h1 icon-starWars" src={IconoRickAndMorty}></img>
 			</Link>
 			<div className={windowWidth<550 ? 'container-btn-favourite-mobile':'container-btn-favourite '} id="navbarScroll">
-			<div class="nav-item dropdown">
-					<button type="button" className="btn-favourite nav-link dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" >Favourites
+			<div className="nav-item dropdown">
+					<button type="button" className="btn-favourite" data-bs-toggle="dropdown" aria-expanded="false" >Favourites
 						<span className="badge text-bg-secondary">{store.favouriteElements.length}</span>
 					</button>
-					<ul class="dropdown-menu">
+					<ul className="dropdown-menu">
 						{generateFavouriteList}
 					</ul>
 			</div>

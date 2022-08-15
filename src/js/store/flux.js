@@ -43,15 +43,23 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 
 			setValueAndTypeElementClicked: (cardInfo,cardType) => {
-			
 				const element = cardInfo;
 				element.cardtype = cardType;
 				setStore({elementClicked:element});
 			},
 			
 			addElementFavourite: (favouriteList,cardInfo)=>{
+				cardInfo.key = cardInfo.id + cardInfo.name;
 				setStore({
 					favouriteElements:[...favouriteList,cardInfo]
+				})
+				return cardInfo.key;
+			},
+
+			deleteElementFavourite: (favouriteList,cardInfo)=>{
+				const newfavouriteList = favouriteList.filter(card=>card.key!=cardInfo.key)
+				setStore({
+					favouriteElements:newfavouriteList
 				})
 			}
 

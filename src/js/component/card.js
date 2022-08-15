@@ -5,9 +5,16 @@ import { Context } from "../store/appContext";
 import { Link } from "react-router-dom";
 
 const Card = (props) => {
-   const {store,actions} = useContext(Context);
-
-
+  const {store,actions} = useContext(Context);
+  const addElementToFavourite = ()=>{
+    props.cardInfo.favourite = !props.cardInfo.favourite;
+    if(props.cardInfo.favourite){
+      actions.addElementFavourite(store.favouriteElements,props.cardInfo)
+    }else{
+      props.cardInfo.key= actions.deleteElementFavourite(store.favouriteElements,props.cardInfo)
+    }
+    
+  }
   return (
     <div className="card">
       <img src={props.setImage} className="card-img-top" alt="..." />
@@ -23,7 +30,7 @@ const Card = (props) => {
             Learn more
           </button>
           </Link>
-          <button href="#" className="btn-favourite-card" onClick={()=>actions.addElementFavourite(store.favouriteElements,props.cardInfo)}>
+          <button href="#" className={props.cardInfo.favourite ? 'btn-favourite-card-on' : 'btn-favourite-card'} onClick={addElementToFavourite}>
            <FaHeart/>
           </button>
         </div>
