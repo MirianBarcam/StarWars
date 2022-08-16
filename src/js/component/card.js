@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 const Card = (props) => {
   const {store,actions} = useContext(Context);
+
   const addElementToFavourite = ()=>{
     props.cardInfo.favourite = !props.cardInfo.favourite;
     if(props.cardInfo.favourite){
