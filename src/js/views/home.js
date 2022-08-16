@@ -6,9 +6,11 @@ import { Context } from "../store/appContext";
 const Home = () => {
 	const {store,actions}=useContext(Context);
 	useEffect(()=>{
-		actions.fetchCharactersList();
-		actions.fetchLocationList();
-		actions.fetchEpisodesList()
+		if(store.charactersList.length===0 && store.locationList.length===0  && store.episodesList.length===0 ){
+			actions.fetchCharactersList();
+			actions.fetchLocationList();
+			actions.fetchEpisodesList()
+		}
 	},[]);
 
 	return(

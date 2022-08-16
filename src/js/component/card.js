@@ -13,7 +13,6 @@ const Card = (props) => {
     }else{
       props.cardInfo.key= actions.deleteElementFavourite(store.favouriteElements,props.cardInfo)
     }
-    
   }
   return (
     <div className="card">
