@@ -34,7 +34,6 @@ const Card = (props) => {
            <FaHeart/>
           </button>
         </div>
-
       </div>
     </div>
   );
